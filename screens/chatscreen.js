@@ -4,7 +4,7 @@ import {  View,Text,Button,StyleSheet} from "react-native";
 const chatscreen=({navigation}) => {
    
         return (
-            <View style={StyleSheet.container}>
+            <View style={styles.container}>
                 <Text>chat Screen</Text>
                 <Button
                     title="Click me"
@@ -23,5 +23,12 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         backgroundColor:'#8fcbbc',
-    }
+    },
+    container1: {
+        flex: 1,
+      },
+      image: {
+        flex: 1,
+        justifyContent: "center"
+      },
 })

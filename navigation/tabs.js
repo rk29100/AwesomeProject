@@ -17,7 +17,7 @@ import settingscreen from '../screens/settingscreen';
 const CustomTabBarButton =({children,onPress}) => (
     <TouchableOpacity
         style={{
-            top: -30,
+            top: -40,
             justifyContent:'center',
             alignItems:'center',
             ...styles.shadow
@@ -26,10 +26,12 @@ const CustomTabBarButton =({children,onPress}) => (
     
     >
         <View style={{
-            width: 70,
-            height: 70,
-            borderRadius: 35,
-            backgroundColor:'#e32f45',
+            width: 80,
+            height: 80,
+            borderRadius:40,
+            backgroundColor:'#ffffff',
+            borderColor:'#748c94',
+            borderWidth:3
         }}>
             {children}
         </View>
@@ -64,8 +66,8 @@ const Tabs =() =>{
                             source={require('../assets/icons/home.png')}
                             resizeMode='contain'
                             style={{
-                                width:25,
-                                height:25,
+                                width:40,
+                                height:40,
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
@@ -83,8 +85,8 @@ const Tabs =() =>{
                             source={require('../assets/icons/remedy.png')}
                             resizeMode='contain'
                             style={{
-                                width:25,
-                                height:25,
+                                width:40,
+                                height:40,
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
@@ -103,9 +105,9 @@ const Tabs =() =>{
                         source={require('../assets/icons/plus.png')}
                         resizeMode='contain'
                         style={{
-                            width: 40,
-                            height: 60,
-                            // tintColor:'#fff',
+                            width: 50,
+                            height: 70,
+                            tintColor: '#748c94'
                         }}
                      />
                  ),
@@ -125,8 +127,8 @@ const Tabs =() =>{
                             source={require('../assets/icons/News.png')}
                             resizeMode='contain'
                             style={{
-                                width:25,
-                                height:25,
+                                width:40,
+                                height:40,
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
@@ -145,8 +147,8 @@ const Tabs =() =>{
                             source={require('../assets/icons/chat.png')}
                             resizeMode='contain'
                             style={{
-                                width:25,
-                                height:25,
+                                width:40,
+                                height:40,
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
@@ -174,5 +176,12 @@ const styles=StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius:3.5,
         elevation:5,
-    }
+    },
+    container: {
+        flex: 1,
+      },
+      image: {
+        flex: 1,
+        justifyContent: "center"
+      },
 });

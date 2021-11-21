@@ -4,7 +4,7 @@ import {  View,Text,Button,StyleSheet} from "react-native";
 const homescreen=({navigation}) => {
    
         return (
-            <View style={StyleSheet.container}>
+            <View style={styles.container}>
                 <Text>Home Screen</Text>
                 <Button
                     title="Click me"

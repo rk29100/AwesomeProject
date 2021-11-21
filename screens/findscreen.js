@@ -12,8 +12,8 @@ return (
             </Text>
             
         </View>
- <ScrollView >
-    <List.AccordionGroup>
+ <ScrollView style={{backgroundColor:'#8fcbbc'}}>
+    <List.AccordionGroup >
         
 
     <List.Accordion title="Adrak(Sonth)" id="1">

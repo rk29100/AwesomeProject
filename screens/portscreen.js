@@ -4,7 +4,7 @@ import {  View,Text,Button,StyleSheet} from "react-native";
 const portscreen=({navigation}) => {
    
         return (
-            <View style={StyleSheet.container}>
+            <View style={styles.container}>
                 <Text>Port Screen</Text>
                 <Button
                     title="Click me"
