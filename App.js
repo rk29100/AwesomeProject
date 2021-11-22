@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Tabs from './navigation/tabs';
 import Onboarding from './screens/onboarding';
 
+
 const App =()=>{
     return (
         <>
