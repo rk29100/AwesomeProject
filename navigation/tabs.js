@@ -4,7 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import Onboard from './onboard';
+import { createStackNavigator } from '@react-navigation/stack';
+import Onboarding from 'react-native-onboarding-swiper';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,7 +14,9 @@ import findscreen from '../screens/findscreen';
 import chatscreen from '../screens/chatscreen';
 import portscreen from '../screens/portscreen';
 import settingscreen from '../screens/settingscreen';
+import onboarding from '../screens/onboarding';
 
+const Stack = createNativeStackNavigator();
 const CustomTabBarButton =({children,onPress}) => (
     <TouchableOpacity
         style={{
@@ -42,6 +45,7 @@ const Tabs =() =>{
     return(
         <>
         {/* <Onboard/> */}
+      <NavigationContainer independent={true}>
         <Tab.Navigator
             screenOptions={{
                 tabBarShowLabel:false,
@@ -160,11 +164,30 @@ const Tabs =() =>{
             />
 
         </Tab.Navigator>
+        </NavigationContainer>
 </>
     );
 }
 
-export default Tabs;
+export  {Tabs};
+
+const onboard=({navigation})=>{
+    return(
+        <>
+        <NavigationContainer independent={true}>
+            <Stack.Navigator headerMode="none">
+                <Stack.Screen options={{headerShown: false}} name='onboarding' component={onboarding}/>
+                <Stack.Screen options={{headerShown: false}} name='tabs' component={Tabs}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+        </>
+    );
+}
+
+export default onboard;
+
+
+
 
 const styles=StyleSheet.create({
     shadow:{

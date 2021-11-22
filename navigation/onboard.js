@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import onboarding from '../screens/onboarding';
 import homescreen from '../screens/homescreen';
+import findscreen from '../screens/findscreen';
+import chatscreen from '../screens/chatscreen';
+import portscreen from '../screens/portscreen';
+import settingscreen from '../screens/settingscreen';
+import Tabs from './tabs';
 
-const AppStack=createNativeStackNavigator();
+
+const AppStack=createStackNavigator();
 
 
 
@@ -16,7 +22,9 @@ const onboard=({navigation})=>{
             <AppStack.Navigator headerMode="none">
                 <AppStack.Screen name='onboarding' component={onboarding}/>
 
-                <AppStack.Screen name='home' component={homescreen}/>
+                <AppStack.Screen name='tabs' component={Tabs}/>
+               
+
 
 
             </AppStack.Navigator>
