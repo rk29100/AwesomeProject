@@ -156,7 +156,7 @@ const Tabs =() =>{
                                 tintColor: focused ? '#e32f45' : '#748c94'
                             }}
                         />
-                        <Text style={{color: focused ? '#e32f45' : '#748c94'  }}>CHAT</Text>
+                        <Text style={{color: focused ? '#e32f45' : '#748c94'  }}>Question</Text>
                     </View>
 
                 ),

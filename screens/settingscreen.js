@@ -5,7 +5,7 @@ const settingscreen=({navigation}) => {
    
         return (
             <View style={styles.container}>
-                <Text>Settings Screen</Text>
+                <Text>Screen</Text>
                 <Button
                     title="Click me"
                     onPress={()=>alert("Button Clicked.")}
