@@ -5,7 +5,7 @@ const chatscreen=({navigation}) => {
    
         return (
             <View style={styles.container}>
-                <Text>chat Screen</Text>
+                <Text>Question Screen</Text>
                 <Button
                     title="Click me"
                     onPress={()=>alert("Button Clicked.")}

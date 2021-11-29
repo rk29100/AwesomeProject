@@ -1,7 +1,7 @@
 import Onboarding from 'react-native-onboarding-swiper';
 import React, { Component } from 'react';
 import {View,Image,StyleSheet,Text}  from 'react-native';
-import Tabs from '../navigation/tabs';
+import tabs from '../navigation/tabs';
 
 const onboarding=({navigation})=> {
    
@@ -12,38 +12,37 @@ const onboarding=({navigation})=> {
                     onDone={()=>{navigation && navigation.navigate('tabs', { screen: 'Home' })}}
 
                     pages={[
-                        
+                    {
+                        backgroundColor: 'white',
+                        image: <Image 
+                                source={require('../assets/icons/onboard1.png')} 
+                                // resizeMode='center'
+                                style={{width:300,height:300}}
+                                />,
+                        title: <Text style={{textAlign:'center',fontSize:40,fontWeight:'bold',color:'#3D550C',marginBottom:40}}>Ayurveda</Text>,
+                        subtitle: <Text style={{textAlign:'center',color:'#3D550C',fontSize:30,fontWeight:'bold'}}>Naturalize to make yourself energized.</Text>,
+                    },
                         {
-                            title: <Text style={{position:'absolute',color:'#292f33',fontStyle:'italic',fontWeight:'bold',fontSize:60,textAlign:'center',lineHeight:60,top:40}}>SWASTHYA UPCHARA</Text>,
-                            // <Text style={{position: 'absolute',
-                            //     top: 50, fontSize:37, alignContent:'center',fontStyle:'italic',fontWeight:'bold',color:'#292f33'}}>SWASTHYA UPCHARA</Text>,
-                            subtitle: <Text style={{position:'absolute',color:'#292f33',fontStyle:'italic',fontWeight:'bold',fontSize:30,textAlign:'center',bottom:170}}>Heart of Perfect Health..!</Text>,
-                            // <Text style={{position: 'absolute',
-                            // bottom: 130,
-                            // fontSize:30, alignContent:'center',fontStyle:'italic',fontWeight:'bold',color:'#292f33'}}>Heart of Perfect Health..! </Text>,
-                            backgroundColor: '#fff',
-                            image: <>
-                                <Image source={require('../assets/icons/yoga.png')}
-                                style={styles.ImageStyle}/>
-                                
-                            <Image
-                            source={require('../assets/icons/ayurveda.jpg')}
-                            style={styles.backgroundImageStyle}/>
-                            
-                            </>
-                    ,
-                            
+                            backgroundColor: 'white',
+                            image: <Image 
+                                    source={require('../assets/icons/onboard2.png')} 
+                                    // resizeMode='center'
+                                    style={{width:300,height:300}}
+                                    />,
+                                    title: <Text style={{textAlign:'center',fontSize:40,fontWeight:'bold',color:'#3D550C',marginBottom:20}}>Ayurveda</Text>,
+                                    subtitle: <Text style={{textAlign:'center',color:'#3D550C',fontSize:30,fontWeight:'bold'}}>Heart of Perfect Health!</Text>,
                         },
-                        // {
-                        //     backgroundColor: '#fff',
-                        //     image: <Image 
-                        //             source={require('../assets/icons/home.png')} 
-                        //             // resizeMode='center'
-                        //             style={{width:300,height:300}}
-                        //             />,
-                        //     title: 'Onboarding',
-                        //     subtitle: 'Done with React Native Onboarding Swiper',
-                        // }
+                        {
+                            backgroundColor: 'white',
+                            image: <Image 
+                                    source={require('../assets/icons/onboard3.png')} 
+                                    // resizeMode='center'
+                                    style={{width:300,height:300}}
+                                    />,
+                                    title: <Text style={{textAlign:'center',fontSize:40,fontWeight:'bold',color:'#3D550C',marginBottom:40}}>Ayurveda</Text>,
+                                    subtitle: <Text style={{textAlign:'center',color:'#3D550C',fontSize:30,fontWeight:'bold'}}>Choose ayurveda and stay fit.</Text>,
+                        },
+                        
                         ]}
 />
                 

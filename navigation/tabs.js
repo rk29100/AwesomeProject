@@ -4,19 +4,37 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createStackNavigator } from '@react-navigation/stack';
 import Onboarding from 'react-native-onboarding-swiper';
-
-const Tab = createBottomTabNavigator();
-
+import blood from '../screens/Remedy/blood';
+import chest from '../screens/Remedy/chest';
+import diabetes from '../screens/Remedy/diabetes';
+import ear from '../screens/Remedy/ear';
+import feet from '../screens/Remedy/feet';
+import mind from '../screens/Remedy/Mind';
+import mouth from '../screens/Remedy/mouth';
+import nail from '../screens/Remedy/nail';
+import nose from '../screens/Remedy/nose';
+import obesity from '../screens/Remedy/obesity';
+import skin from '../screens/Remedy/skin';
+import sleep from '../screens/Remedy/sleep';
+import stomach from '../screens/Remedy/stomach';
+import teeth from '../screens/Remedy/teeth';
+import throat from '../screens/Remedy/throat';
+import veins from '../screens/Remedy/veins';
 import homescreen from '../screens/homescreen';
 import findscreen from '../screens/findscreen';
 import chatscreen from '../screens/chatscreen';
 import portscreen from '../screens/portscreen';
 import settingscreen from '../screens/settingscreen';
 import onboarding from '../screens/onboarding';
+import splash from '../screens/splash';
 
-const Stack = createNativeStackNavigator();
+
+
+
+const Tab = createBottomTabNavigator();
+
+
 const CustomTabBarButton =({children,onPress}) => (
     <TouchableOpacity
         style={{
@@ -44,16 +62,15 @@ const CustomTabBarButton =({children,onPress}) => (
 const Tabs =() =>{
     return(
         <>
-        {/* <Onboard/> */}
       <NavigationContainer independent={true}>
         <Tab.Navigator
             screenOptions={{
                 tabBarShowLabel:false,
                 tabBarStyle: {
                     position:'absolute',
-                    bottom: 25,
-                    left: 20,
-                    right: 20,
+                    bottom: 10,
+                    left: 5,
+                    right: 5,
                     elevation: 0,
                     backroundColor: '#ffffff',
                     borderRadius: 15,
@@ -72,7 +89,8 @@ const Tabs =() =>{
                             style={{
                                 width:40,
                                 height:40,
-                                tintColor: focused ? '#e32f45' : '#748c94'
+                                tintColor: focused ? '#e32f45' : '#748c94',
+                                
                             }}
                         />
                         <Text style={{color: focused ? '#e32f45' : '#748c94'  }}>HOME</Text>
@@ -169,22 +187,12 @@ const Tabs =() =>{
     );
 }
 
-export  {Tabs};
+export  default Tabs;
 
-const onboard=({navigation})=>{
-    return(
-        <>
-        <NavigationContainer independent={true}>
-            <Stack.Navigator headerMode="none">
-                <Stack.Screen options={{headerShown: false}} name='onboarding' component={onboarding}/>
-                <Stack.Screen options={{headerShown: false}} name='tabs' component={Tabs}/>
-            </Stack.Navigator>
-        </NavigationContainer>
-        </>
-    );
-}
 
-export default onboard;
+
+
+
 
 
 
