@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { List , Modal,Card,Title,Avatar} from 'react-native-paper';
-import { View,Text,ScrollView, Alert,Image,StyleSheet } from 'react-native';
-import Tabs from '../navigation/tabs';
-import onboard from '../navigation/onboard';
-import remedy from '../navigation/remedy'
+import { View,Text,ScrollView, Alert,Image,StyleSheet,LogBox } from 'react-native';
+
 
 
 const DATA=[{
@@ -142,6 +140,9 @@ const DATA=[{
 
 
 const findscreen = ({navigation}) => {
+  React.useEffect(() =>{
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+  },[])
  
 return (
   <View style={{height:675,backgroundColor:'white'}}>

@@ -3,33 +3,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Onboarding from 'react-native-onboarding-swiper';
-import blood from '../screens/Remedy/blood';
-import chest from '../screens/Remedy/chest';
-import diabetes from '../screens/Remedy/diabetes';
-import ear from '../screens/Remedy/ear';
-import feet from '../screens/Remedy/feet';
-import mind from '../screens/Remedy/Mind';
-import mouth from '../screens/Remedy/mouth';
-import nail from '../screens/Remedy/nail';
-import nose from '../screens/Remedy/nose';
-import obesity from '../screens/Remedy/obesity';
-import skin from '../screens/Remedy/skin';
-import sleep from '../screens/Remedy/sleep';
-import stomach from '../screens/Remedy/stomach';
-import teeth from '../screens/Remedy/teeth';
-import throat from '../screens/Remedy/throat';
-import veins from '../screens/Remedy/veins';
+
 import homescreen from '../screens/homescreen';
-import findscreen from '../screens/findscreen';
-import chatscreen from '../screens/chatscreen';
 import portscreen from '../screens/portscreen';
 import settingscreen from '../screens/settingscreen';
-import onboarding from '../screens/onboarding';
-import splash from '../screens/splash';
-
-
+import chatscreen from '../screens/chatscreen';
+import findscreen from '../screens/findscreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -89,11 +68,11 @@ const Tabs =() =>{
                             style={{
                                 width:40,
                                 height:40,
-                                tintColor: focused ? '#e32f45' : '#748c94',
+                                tintColor: focused ? '#3D550C' : '#748c94',
                                 
                             }}
                         />
-                        <Text style={{color: focused ? '#e32f45' : '#748c94'  }}>HOME</Text>
+                        <Text style={{color: focused ? '#3D550C' : '#748c94'  }}>HOME</Text>
                     </View>
 
                 ),
@@ -109,10 +88,10 @@ const Tabs =() =>{
                             style={{
                                 width:40,
                                 height:40,
-                                tintColor: focused ? '#e32f45' : '#748c94'
+                                tintColor: focused ?'#3D550C' : '#748c94'
                             }}
                         />
-                        <Text style={{color: focused ? '#e32f45' : '#748c94'  }}>REMEDY</Text>
+                        <Text style={{color: focused ? '#3D550C' : '#748c94'  }}>REMEDY</Text>
                     </View>
 
                 ),
@@ -151,10 +130,10 @@ const Tabs =() =>{
                             style={{
                                 width:40,
                                 height:40,
-                                tintColor: focused ? '#e32f45' : '#748c94'
+                                tintColor: focused ?'#3D550C' : '#748c94'
                             }}
                         />
-                        <Text style={{color: focused ? '#e32f45' : '#748c94'  }}>NEWS</Text>
+                        <Text style={{color: focused ? '#3D550C' : '#748c94'  }}>NEWS</Text>
                     </View>
 
                 ),
@@ -171,10 +150,10 @@ const Tabs =() =>{
                             style={{
                                 width:40,
                                 height:40,
-                                tintColor: focused ? '#e32f45' : '#748c94'
+                                tintColor: focused ? '#3D550C' : '#748c94'
                             }}
                         />
-                        <Text style={{color: focused ? '#e32f45' : '#748c94'  }}>Question</Text>
+                        <Text style={{color: focused ? '#3D550C' : '#748c94'  }}>Question</Text>
                     </View>
 
                 ),

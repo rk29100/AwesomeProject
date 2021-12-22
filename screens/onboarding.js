@@ -8,8 +8,8 @@ const onboarding=({navigation})=> {
         return (
             
                 <Onboarding
-                    onSkip={()=>{navigation && navigation.navigate('tabs', { screen: 'Home' })}}
-                    onDone={()=>{navigation && navigation.navigate('tabs', { screen: 'Home' })}}
+                    onSkip={()=>{navigation && navigation.navigate('SignIn')}}
+                    onDone={()=>{navigation && navigation.navigate('SignIn')}}
 
                     pages={[
                     {

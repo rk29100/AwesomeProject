@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import onboarding from '../screens/onboarding';
 import Tabs from './tabs';
 import splash from '../screens/splash';
-import remedy from './remedy';
+import SignUpScreen from '../screens/SignupScreen';
+import LoginScreen from '../screens/LoginScreen';
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -18,8 +20,9 @@ const Onboard=({navigation})=>{
             <Stack.Navigator>
                 <Stack.Screen options={{headerShown: false}} name='splash' component={splash}/>
                 <Stack.Screen options={{headerShown: false}} name='onboarding' component={onboarding}/>
+                <Stack.Screen options={{headerShown:false}} name='SignIn' component={LoginScreen}/>
+                <Stack.Screen options={{headerShown:false}} name='SignUp' component={SignUpScreen}/>
                 <Stack.Screen options={{headerShown: false}} name='tabs' component={Tabs}/>
-                {/* <Stack.Screen options={{headerShown: false}} name='remedy' component={remedy}/> */}
             </Stack.Navigator>
         </NavigationContainer>
         </>

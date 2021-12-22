@@ -1,6 +1,7 @@
 import NestedListView, {NestedRow} from 'react-native-nested-listview'
 import React from "react";
 import {View,Text,StyleSheet, SafeAreaView, ScrollView, Linking} from 'react-native'
+import { Portal } from 'react-native-paper';
 
 const data=[
   {
@@ -83,7 +84,7 @@ const data=[
   
 ]
  
-export default App = () => {
+export default portscreen = () => {
   return (
   <View style={{height:675,backgroundColor:'white'}}>
  <View style={styles.container}>
@@ -134,14 +135,19 @@ const styles = StyleSheet.create({
   texthead:{
     fontSize:20,
     fontWeight:'bold',
-    color:'white',
-    backgroundColor:'#4B5320',
+    color:'black',
+    borderColor:'grey',
+    borderRadius:3,
+    borderWidth:3,
+    paddingHorizontal:8
    
   },
   textadd:{
     fontSize:15,
-    color:'black',
     fontStyle:'italic',
+    color:'white',
+    backgroundColor:'#4B5320',
+    paddingHorizontal:8
   },
   textlink:{
     fontSize:12,
@@ -150,3 +156,4 @@ const styles = StyleSheet.create({
 
   }
 });
+
