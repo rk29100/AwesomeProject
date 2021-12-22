@@ -145,8 +145,8 @@ const findscreen = ({navigation}) => {
  
 return (
   <View style={{height:675,backgroundColor:'white'}}>
-    <View style={{height:70,backgroundColor:'white'}}>
-            <Text style={{alignSelf:'center',fontSize:45,marginBottom:5,marginTop:5,color:'#3D550C'}}>
+    <View style={styles.container1}>
+            <Text style={styles.title}>
                 Home Remedies
             </Text>
             
@@ -210,5 +210,21 @@ const styles=StyleSheet.create({
     image: {
       flex: 1,
       justifyContent: "center"
+    },
+    container1: {
+      height:70,
+      backgroundColor:'white'
+    },
+    title: {
+      alignSelf:'center',
+      fontSize:45,
+      marginBottom:5,
+      marginTop:5,
+      color:'#3D550C',
+      borderColor: '#3D550C',
+      borderRadius:5,
+      borderWidth:5,
+      paddingHorizontal:8
+    
     },
 });
