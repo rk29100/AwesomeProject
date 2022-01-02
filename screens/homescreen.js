@@ -87,14 +87,14 @@ export default class homescreen extends React.Component {
 
     render() {
         return (
-            <View style={{ height: 675, backgroundColor: 'white' }}>
+            <>
                 <DrawerLayoutAndroid
                     ref={(drawer) => { this.drawer = drawer }}
                     drawerWidth={260}
                     drawerPosition={"left"}
                     renderNavigationView={() => {
                         return (
-                            <View style={{ height: 675, backgroundColor: 'white' }}>
+                            <View style={{ backgroundColor: 'white' }}>
                                 <>
                                     <Image source={{ uri: 'https://cdn-icons.flaticon.com/png/512/2102/premium/2102633.png?token=exp=1640871991~hmac=407152ead770cae267be79690ce0ed7a' }} style={{ height: 80, width: 80, alignSelf: 'center', marginTop: 20 }} />
 
@@ -105,7 +105,7 @@ export default class homescreen extends React.Component {
 
                                 <View style={{ marginTop: 60 }}>
                                     <Divider />
-                                    <Text style={{ color: 'black', fontSize: 30 }} onPress={() => { alert("Hi") }}>About</Text>
+                                    <Text style={{ color: 'black', fontSize: 30 }} onPress={() => { Alert.alert("Swasthya Upchara", "This app will guide you about the best ayurveda services near you and give you best remedies on your daily diseases.") }}>About</Text>
                                     <Divider />
                                 </View>
 
@@ -119,7 +119,7 @@ export default class homescreen extends React.Component {
                         )
                     }}>
 
-                    <SafeAreaView style={{ flex: 1, backgroundColor: 'white', paddingTop: 50 }}>
+                    <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 50 }}>
                         <Image source={require('../assets/icons/my_app.png')} style={{ width: 30, height: 80, paddingHorizontal: 200, marginStart: 45, marginTop: -40, marginBottom: 20 }} />
                         <View style={{ marginBottom: 30, flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.drawer.openDrawer()} >
@@ -141,9 +141,9 @@ export default class homescreen extends React.Component {
                             />
                         </View>
 
-                    </SafeAreaView>
+                    </View>
                 </DrawerLayoutAndroid>
-            </View>
+            </>
         );
     }
 }

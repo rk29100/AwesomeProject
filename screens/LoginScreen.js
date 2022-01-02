@@ -74,7 +74,7 @@ const LoginScreen = ({ navigation }) => {
               Sign In
             </Text>
           </TouchableOpacity>
-          <View
+          {/* <View
             style={{
               marginVertical: 20,
               flexDirection: 'row',
@@ -109,7 +109,7 @@ const LoginScreen = ({ navigation }) => {
                 source={{ uri: 'https://img.icons8.com/color/2x/facebook-new.png' }}
               />
             </View>
-          </View>
+          </View> */}
         </View>
 
         <View
