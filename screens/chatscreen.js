@@ -4,6 +4,8 @@ import { Bubble, GiftedChat } from 'react-native-gifted-chat';
 import { Dialogflow_V2 } from "react-native-dialogflow";
 import { dialogflowConfig } from "../assets/env";
 
+import authentication from '../firebase/firebase-config';
+
 const botAvatar = require('../assets/icons/bot.png')
 const BOT = {
     _id: 2,
@@ -86,7 +88,7 @@ class Chatbot extends Component {
     }
 
     renderBubble = props => {
-        return <Bubble  {...props} textStyle={{ right: { color: 'white' } }} wrapperStyle={{ left: { backgroundColor: 'yellow' }, right: { backgroundColor: 'red' } }} />
+        return <Bubble  {...props} textStyle={{ left: { color: 'white' }, right: { color: 'white' } }} wrapperStyle={{ left: { backgroundColor: '#3b4b21' }, right: { backgroundColor: 'olive' } }} />
 
     }
 

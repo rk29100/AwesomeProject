@@ -152,7 +152,7 @@ const findscreen = ({ navigation }) => {
         </Text>
 
       </View>
-      <ScrollView style={{ backgroundColor: 'white' }}>
+      <ScrollView style={{ backgroundColor: 'white', height: 660 }}>
 
         <View style={{ flex: 1, flexDirection: 'row', display: 'flex', flexWrap: 'wrap', marginTop: 30 }}>
 

@@ -1,25 +1,47 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { SafeAreaView, View, Text, TextInput, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, TextInput, Image, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../consts/colors';
 import STYLES from '../styles/styles';
 import { authentication } from '../firebase/firebase-config';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState("");
+  const [loggedin, setLoggedin] = React.useState(false);
 
   const handleLogin = () => {
     signInWithEmailAndPassword(authentication, email, password)
       .then((re) => {
         console.log(re)
+        Alert.alert("Success ✅", "Account logged in successfully " + email);
+        setLoggedin(true);
+        navigation && navigation.navigate('tabs', { screen: 'Home' });
       })
       .catch((re) => {
-        console.log(re)
+        console.log(re);
+
+        if (re.code == "auth/wrong-password") {
+          Alert.alert("Account login failed ❌", "Wrong Password.");
+        }
+        else if (re.code == "auth/user-not-found") {
+          Alert.alert("Account login failed❌", "User not Found.");
+
+        }
+        else if (re.code == "auth/too-many-requests") {
+          Alert.alert("Account login failed❌", "Too many Attempts done. Try after some time or reset the password.");
+        }
+        else {
+          Alert.alert("Failed ❌", "Account login failed.");
+        }
+
+        setLoggedin(false);
       })
   }
+
+
 
   return (
     <SafeAreaView
@@ -66,7 +88,6 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <TouchableOpacity style={STYLES.btnPrimary}
             onPress={() => {
-              navigation && navigation.navigate('tabs', { screen: 'Home' });
               handleLogin();
             }
             }>
@@ -74,6 +95,7 @@ const LoginScreen = ({ navigation }) => {
               Sign In
             </Text>
           </TouchableOpacity>
+
           {/* <View
             style={{
               marginVertical: 20,
@@ -112,6 +134,7 @@ const LoginScreen = ({ navigation }) => {
           </View> */}
         </View>
 
+
         <View
           style={{
             flexDirection: 'row',
@@ -121,11 +144,24 @@ const LoginScreen = ({ navigation }) => {
             marginBottom: 20,
           }}>
           <Text style={{ color: COLORS.light, fontWeight: 'bold' }}>
-            Don`t have an account ?
+            Don't have an account ?
           </Text>
           <TouchableOpacity onPress={() => { navigation && navigation.navigate('SignUp') }}>
             <Text style={{ color: COLORS.pink, fontWeight: 'bold' }}>
               Sign up
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'flex-end',
+            justifyContent: 'center',
+          }}>
+
+          <TouchableOpacity onPress={() => { navigation.navigate("Forgot") }}>
+            <Text style={{ color: '#0645AD', fontWeight: 'bold' }}>
+              Forgot Password ?
             </Text>
           </TouchableOpacity>
         </View>

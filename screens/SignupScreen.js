@@ -18,9 +18,11 @@ const SignUpScreen = ({ navigation }) => {
     createUserWithEmailAndPassword(authentication, email, password)
       .then((re) => {
         console.log(re);
+        Alert.alert("Success ✅", "Account created successfully")
       })
       .catch((re) => {
         console.log(re);
+        Alert.alert("Failed ❌", "Account login failed.")
       })
   }
 
