@@ -3,8 +3,9 @@ import { View, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
 import { Bubble, GiftedChat } from 'react-native-gifted-chat';
 import { Dialogflow_V2 } from "react-native-dialogflow";
 import { dialogflowConfig } from "../assets/env";
-
-import authentication from '../firebase/firebase-config';
+import { authentication, db } from '../firebase/firebase-config';
+import { deviceHeight } from "../Dimen";
+import { collection, getDocs, doc, setDoc } from 'firebase/firestore/lite';
 
 const botAvatar = require('../assets/icons/bot.png')
 const BOT = {
@@ -31,6 +32,10 @@ class Chatbot extends Component {
             Dialogflow_V2.LANG_ENGLISH_US,
             dialogflowConfig.project_id,
         );
+        // const { name, id } = this.props.navigation.params;
+        // console.log(this.props)
+
+
     }
 
     handleGoogleResponse(result) {
@@ -96,9 +101,7 @@ class Chatbot extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
-
-
+            <View style={{ flex: 1, backgroundColor: 'white', height: deviceHeight }}>
                 <GiftedChat messages={this.state.messages}
                     onSend={(message) => this.onSend(message)}
                     onQuickReply={(quickReply) => this.onQuickReply(quickReply)}

@@ -1,11 +1,12 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { SafeAreaView, View, Text, TextInput, Image, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { SafeAreaView, View, Text, TextInput, Image, TouchableOpacity, ScrollView, Alert, BackHandler } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../consts/colors';
 import STYLES from '../styles/styles';
 import { authentication } from '../firebase/firebase-config';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import { deviceHeight, deviceWidth } from '../Dimen';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState('');
@@ -43,13 +44,14 @@ const LoginScreen = ({ navigation }) => {
 
 
 
+
   return (
     <SafeAreaView
       style={{ paddingHorizontal: 20, flex: 1, backgroundColor: COLORS.white }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flexDirection: 'row', marginTop: 40 }}>
 
-          <Image source={require('../assets/icons/my_app.png')} style={{ width: '100%', height: 70, marginLeft: 45 }} />
+          <Image source={require('../assets/icons/my_app.png')} style={{ width: '100%', height: 70, marginLeft: deviceWidth / 8.6 }} />
         </View>
 
         <View style={{ marginTop: 70 }}>
@@ -89,6 +91,7 @@ const LoginScreen = ({ navigation }) => {
           <TouchableOpacity style={STYLES.btnPrimary}
             onPress={() => {
               handleLogin();
+              navigation && navigation.navigate('tabs', { screen: 'Home', params: { name: authentication.currentUser?.email, id: authentication.currentUser?.uid } });
             }
             }>
             <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18 }} >

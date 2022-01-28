@@ -6,6 +6,7 @@ import COLORS from '../consts/colors';
 import STYLES from '../styles/styles';
 import { authentication } from '../firebase/firebase-config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { deviceWidth } from '../Dimen';
 
 const SignUpScreen = ({ navigation }) => {
 
@@ -31,7 +32,7 @@ const SignUpScreen = ({ navigation }) => {
       style={{ paddingHorizontal: 20, flex: 1, backgroundColor: COLORS.white }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flexDirection: 'row', marginTop: 40 }}>
-          <Image source={require('../assets/icons/my_app.png')} style={{ width: '100%', height: 70, marginLeft: 45 }} />
+          <Image source={require('../assets/icons/my_app.png')} style={{ width: '100%', height: 70, marginLeft: deviceWidth / 8.6 }} />
         </View>
         <View style={{ marginTop: 70 }}>
           <Text style={{ fontSize: 27, fontWeight: 'bold', color: COLORS.dark }}>

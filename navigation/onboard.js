@@ -10,7 +10,9 @@ import ForgotPassword from '../screens/ForgotPassword';
 
 
 
+
 const Stack = createNativeStackNavigator();
+
 
 
 
@@ -24,6 +26,7 @@ const Onboard = ({ navigation }) => {
                     <Stack.Screen options={{ headerShown: false }} name='SignIn' component={LoginScreen} />
                     <Stack.Screen options={{ headerShown: false }} name='SignUp' component={SignUpScreen} />
                     <Stack.Screen options={{ headerShown: false }} name='Forgot' component={ForgotPassword} />
+
                     <Stack.Screen options={{ headerShown: false }} name='tabs' component={Tabs} />
                 </Stack.Navigator>
             </NavigationContainer>
