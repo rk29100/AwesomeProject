@@ -32,8 +32,6 @@ class Chatbot extends Component {
             Dialogflow_V2.LANG_ENGLISH_US,
             dialogflowConfig.project_id,
         );
-        // const { name, id } = this.props.navigation.params;
-        // console.log(this.props)
 
 
     }

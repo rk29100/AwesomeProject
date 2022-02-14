@@ -11,7 +11,7 @@ const generateColor = () => {
     return randomColor;
 };
 
-class Homescreen extends React.Component {
+class settingscreen extends React.Component {
     state = {
         news: []
     }
@@ -71,4 +71,4 @@ class Homescreen extends React.Component {
     };
 }
 
-export default Homescreen;
+export default settingscreen;

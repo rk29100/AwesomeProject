@@ -122,7 +122,7 @@ export default class homescreen extends React.Component {
                                 <Divider />
                                 <View>
                                     <TouchableOpacity onPress={() => { this.props.navigation.navigate('WebView2', { url: 'https://youtu.be/XozF9VBLEfU' }) }} style={{ display: 'flex', flexDirection: 'row', marginTop: 10, marginBottom: 10, marginLeft: 10 }}>
-                                        <Image source={{ uri: 'https://cdn-icons.flaticon.com/png/512/4246/premium/4246528.png?token=exp=1643289993~hmac=210a36f444df23d668f6bee5f7c448e8' }} style={{ height: 30, width: 30 }} />
+                                        <Image source={{ uri: 'https://cdn-icons.flaticon.com/png/512/1652/premium/1652961.png?token=exp=1643361399~hmac=479df3dc713d44b7d97b052a31b5fbc1' }} style={{ height: 30, width: 30 }} />
                                         <Text style={{ color: 'black', fontSize: 20, marginLeft: 10 }}>Know Ayurveda</Text>
                                     </TouchableOpacity>
                                 </View>
@@ -136,7 +136,7 @@ export default class homescreen extends React.Component {
                                 <Divider />
                                 <View >
                                     <TouchableOpacity onPress={() => { this.props.navigation.navigate('WebView2', { url: 'https://static.wixstatic.com/media/b34ead_08507d7fefec47cc8eccdbd86f4cf567~mv2.png/v1/fit/w_1000%2Ch_1000%2Cal_c/file.png' }) }} style={{ display: 'flex', flexDirection: 'row', marginTop: 10, marginBottom: 10, marginLeft: 10 }}>
-                                        <Image source={{ uri: 'https://cdn-icons.flaticon.com/png/512/896/premium/896442.png?token=exp=1643292847~hmac=9b327d1d27947abe4a45965e3ac85790' }} style={{ height: 30, width: 30 }} />
+                                        <Image source={{ uri: 'https://cdn-icons.flaticon.com/png/512/896/premium/896442.png?token=exp=1643361350~hmac=25e163324077b21d870c382b14794f9b' }} style={{ height: 30, width: 30 }} />
                                         <Text style={{ color: 'black', fontSize: 20, marginLeft: 10 }} >Ayurvedic Clock</Text>
                                     </TouchableOpacity>
 
@@ -163,7 +163,7 @@ export default class homescreen extends React.Component {
                                 <View>
                                     <TouchableOpacity onPress={() => { this.props.navigation.navigate('herb') }} style={{ display: 'flex', flexDirection: 'row', marginTop: 10, marginBottom: 10, marginLeft: 10 }}>
 
-                                        <Image source={{ uri: 'https://cdn-icons.flaticon.com/png/512/1652/premium/1652961.png?token=exp=1643349409~hmac=dcbd299ffe1fa7e3123a58aae66068ca' }} style={{ height: 30, width: 30 }} />
+                                        <Image source={{ uri: 'https://cdn-icons.flaticon.com/png/512/521/premium/521853.png?token=exp=1643361399~hmac=e00d9ce696afb11dca8e910b1ef5670d' }} style={{ height: 30, width: 30 }} />
 
                                         <Text style={{ color: 'black', fontSize: 20, marginLeft: 10 }} >Herb</Text>
                                     </TouchableOpacity>

@@ -48,7 +48,7 @@ const nail = ({ navigation }) => (
     <ScrollView>
       {DATA.map((data, index) => {
         return (
-          <View key={index} style={{ margin: 10, backgroundColor: generatecolor(), borderRadius: 10, elevation: 4, width: deviceWidth - 30, marginVertical: 7, padding: 10 }}>
+          <View key={index} style={{ margin: 10, backgroundColor: generateColor(), borderRadius: 10, elevation: 4, width: deviceWidth - 30, marginVertical: 7, padding: 10 }}>
             <Title style={{ marginTop: 10, color: 'white' }}>{data.title}</Title>
             <Paragraph style={{ color: 'white' }}>{data.desc}</Paragraph>
           </View>

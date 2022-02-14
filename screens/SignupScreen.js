@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { SafeAreaView, View, Text, TextInput, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { SafeAreaView, View, Text, TextInput, Image, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../consts/colors';
 import STYLES from '../styles/styles';
@@ -19,11 +19,13 @@ const SignUpScreen = ({ navigation }) => {
     createUserWithEmailAndPassword(authentication, email, password)
       .then((re) => {
         console.log(re);
+        navigation && navigation.navigate('SignIn')
         Alert.alert("Success ✅", "Account created successfully")
       })
       .catch((re) => {
         console.log(re);
-        Alert.alert("Failed ❌", "Account login failed.")
+        if (re.code == 'auth/email-already-in-use')
+          Alert.alert("Failed ❌", "Email already in Use.")
       })
   }
 
@@ -89,7 +91,7 @@ const SignUpScreen = ({ navigation }) => {
             style={STYLES.btnPrimary}
             onPress={() => {
               handleSignUp();
-              { navigation && navigation.navigate('SignIn') };
+
             }}>
             <Text
               style={{ color: '#fff', fontWeight: 'bold', fontSize: 18 }} >
